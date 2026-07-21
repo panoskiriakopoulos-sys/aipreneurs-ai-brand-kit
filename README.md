@@ -96,6 +96,12 @@ node scripts/setup.js --force
 
 ---
 
+## Credits
+
+Prompt library curated from the open community by [YouMind.com](https://youmind.com). 14,000+ model-agnostic prompts, updated twice daily.
+
+---
+
 ## License
 
 MIT
