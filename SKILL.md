@@ -85,25 +85,42 @@ No credentials needed. References are pulled from GitHub.
 
 # SEARCH MODE -- Curated Prompt Library
 
-## Available References
+## Prompt Data Structure
 
-All prompts are in `references/` as JSON files. Each entry has `id`, `content` (prompt text), `title`, `description`, `sourceMedia` (sample image URLs), and `needReferenceImages`.
+Each reference file contains an array of prompt objects:
 
-### Categories (from references/manifest.json)
+```json
+{
+  "id": 12345,
+  "content": "Image generation prompt text in English",
+  "title": "Prompt title",
+  "description": "What this prompt creates",
+  "sourceMedia": ["sample_image_url_1", "sample_image_url_2"],
+  "needReferenceImages": false
+}
+```
 
-| Category | File | Count |
-|----------|------|-------|
-| Social Media Post | social-media-post.json | 9,279 |
-| Product Marketing | product-marketing.json | 5,438 |
-| Profile / Avatar | profile-avatar.json | 1,866 |
-| Poster / Flyer | poster-flyer.json | 908 |
-| Infographic / Edu Visual | infographic-edu-visual.json | 586 |
-| E-commerce Main Image | ecommerce-main-image.json | 552 |
-| Game Asset | game-asset.json | 673 |
-| Comic / Storyboard | comic-storyboard.json | 616 |
-| YouTube Thumbnail | youtube-thumbnail.json | 215 |
-| App / Web Design | app-web-design.json | 224 |
-| Uncategorized | others.json | 1,081 |
+## Reference Files
+
+<!-- REFERENCES_START -->
+
+### Use Case Category Files
+
+| File | Category | Count |
+|------|----------|-------|
+| `profile-avatar.json` | Profile / Avatar | 1,866 |
+| `social-media-post.json` | Social Media Post | 9,279 |
+| `infographic-edu-visual.json` | Infographic / Edu Visual | 586 |
+| `youtube-thumbnail.json` | YouTube Thumbnail | 215 |
+| `comic-storyboard.json` | Comic / Storyboard | 616 |
+| `product-marketing.json` | Product Marketing | 5,438 |
+| `ecommerce-main-image.json` | E-commerce Main Image | 552 |
+| `game-asset.json` | Game Asset | 673 |
+| `poster-flyer.json` | Poster / Flyer | 908 |
+| `app-web-design.json` | App / Web Design | 224 |
+| `others.json` | Uncategorized | 1,081 |
+
+<!-- REFERENCES_END -->
 
 ## Category Matching
 
