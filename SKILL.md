@@ -202,6 +202,17 @@ Branding prompts are built with 8 layers. Vague inputs → weak output.
 | 7 | Negative Constraints | "no mockup, no 3D, no shadows, no borders" |
 | 8 | Use Cases | "scalable for web, print, social media" |
 
+## Model Selection
+
+| Asset Type | Recommended Model | Why |
+|-----------|------------------|-----|
+| Logos / Icons | GPT Image (openai/gpt-image-1.5 or gpt-image-2) | Alpha channel transparency, clean text |
+| Business Cards / Print | GPT Image | Clean typography, flat layouts |
+| Hero Images (photorealistic) | FLUX (black-forest-labs/FLUX-2-dev) | Photorealism, natural textures |
+| Brand Boards / Social Kits | GPT Image | Text + graphics composition |
+
+**Size limitation:** GPT Image models are locked to 1024x1024, 1536x1024, or 1024x1536. Exact business card ratio (85:55) needs a post-generation crop (5 seconds in any image tool).
+
 ## Industry-to-Template Matching
 
 | Industry | Logo | Hero | Colors |
@@ -373,15 +384,47 @@ textures, fake sky, unnatural colors, no text, no logos.
 
 ## Business Card
 
+**Rules:**
+- Always pass the logo as a reference image
+- Use placeholder info when none provided: "YOUR NAME", "yourname@yourwebsite.com", "www.yourwebsite.com"
+- Card must fill the canvas edge to edge -- the card IS the image, no margins, no padding around it
+- Post-generation: crop to 85:55 (1.55:1) ratio in any image tool
+
 ```text
-Create a [modern / premium / minimalist] business card for "[BRAND NAME]",
-a [BUSINESS TYPE].
+A flat 2D business card front, scanned straight-on like a flatbed.
+WIDE HORIZONTAL RECTANGLE -- much wider than tall. The card fills the
+ENTIRE image edge to edge, no padding, no margins around the card.
+The card IS the full image, not floating in space. Uploaded reference
+logo sits at top center.
 
-Front: Brand name prominent, [NAME] - [ROLE], contact info in clean
-layout. [COLOR 1] dominant, [COLOR 2] accent, on [COLOR 3] background.
+[CARD COLOR] background. Top center: "[NAME]" in [FONT STYLE],
+[TEXT COLOR]. Below: "[ROLE]" in [ACCENT COLOR]. Bottom:
+"[EMAIL] | [WEBSITE]" in [NEUTRAL COLOR], evenly spaced.
 
-Back: [ICON / PATTERN] with tagline or service listing. 85x55mm.
-Flat mockup. No 3D, no perspective, no extra text.
+NEGATIVE: NO square format. NO equal width and height. NO white
+margins around card. NO floating card in center. NO 3D perspective.
+NO angled view. NO tilt. NO hands. NO desk. NO shadows. NO gloss.
+NO metal. NO rounded corners. NO back side. NO QR codes. NO extra
+text. NO icons beyond the logo. Card fills canvas.
+```
+
+**Filled example -- Electrician:**
+```text
+A flat 2D business card front, scanned straight-on like a flatbed.
+WIDE HORIZONTAL RECTANGLE -- much wider than tall. The card fills the
+ENTIRE image edge to edge, no padding, no margins around the card.
+The card IS the full image, not floating in space. Uploaded reference
+logo (circular badge, lightning bolt and wrench) sits at top center.
+
+Cream background. Top center: "YOUR NAME" in bold serif, dark
+charcoal. Below: "Licensed Electrician" in warm amber. Bottom:
+"yourname@yourwebsite.com | www.yourwebsite.com" in charcoal.
+
+NEGATIVE: NO square format. NO equal width and height. NO white
+margins around card. NO floating card in center. NO 3D perspective.
+NO angled view. NO tilt. NO hands. NO desk. NO shadows. NO gloss.
+NO metal. NO rounded corners. NO back side. NO QR codes. NO extra
+text. NO icons beyond the badge. Card fills canvas.
 ```
 
 ## Social Assets
@@ -457,6 +500,10 @@ After each: "Want adjustments or move to the next asset?"
 ---
 
 ## Known Fixes
+
+### Dimension Lock (GPT Image)
+
+GPT Image models only output at 1024x1024, 1536x1024, or 1024x1536. No prompt, no `size` parameter, no pleading will change this. For business cards and other non-square assets, crop to exact ratio after generation. Takes 5 seconds in any tool.
 
 ### Background Issues
 
