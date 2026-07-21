@@ -216,6 +216,13 @@ Branding prompts are built with 8 layers. Vague inputs → weak output.
 
 ## Logo Templates
 
+### ⚠️ Icon-Only Rule
+
+If the user asks for an icon without text ("just the icon", "no name", "icon only", "logo mark only"):
+- Remove ALL typography/text lines from any template
+- Add to negative constraints: "no text, no letters, no words, no brand name, no typography, pure icon mark only"
+- Add to background: "transparent background, alpha channel PNG" for tools that support it (ChatGPT, DALL-E). For tools without alpha support (FLUX, Midjourney), use "clean white background"
+
 ### Template A -- Premium / Luxury
 
 ```text
@@ -223,7 +230,7 @@ Create a premium modern minimalist vector logo for "[BRAND NAME]", a
 [INDUSTRY] in [LOCATION].
 Transparent background (alpha channel) ONLY -- no white, black, colored,
 textured, gradient, or shadow background. The output must be an isolated
-logo in PNG format with full transparency.
+logo in PNG format with full alpha channel transparency.
 
 Use elegant geometric typography with clean, balanced spacing. Integrate
 a subtle [REGIONAL/CONTEXTUAL] inspired icon: [ONE SIMPLE CONCEPT].
