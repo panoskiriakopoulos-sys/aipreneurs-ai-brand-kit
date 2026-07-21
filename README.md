@@ -1,37 +1,26 @@
 # Aipreneurs AI Brand Kit
 
-**Generate ready-to-paste ChatGPT prompts for professional brand assets.**
-Works with ChatGPT (free/paid), DALL-E 3, and GPT Image 1.5.
+**14,000+ curated image prompts + branding template generator. Model-agnostic.**
+Works with DALL-E, Midjourney, Flux, Stable Diffusion, GPT Image, Nano Banana, Seedream, and more.
 
-[![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-blueviolet)](https://openclaw.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Aipreneurs Academy](https://img.shields.io/badge/Aipreneurs-Academy-ff6b35)](https://github.com/panoskiriakopoulos-sys/aipreneurs-ai-brand-kit)
+[![Prompts: 14K+](https://img.shields.io/badge/Prompts-14%2C855-blue)](references/manifest.json)
 
 ---
 
 ## What Is This?
 
-An AI agent skill that gives Claude, OpenClaw, and other AI assistants the ability to generate ready-to-paste ChatGPT prompts for professional brand assets. Tell your AI one sentence about your business or client, and it outputs an exact prompt you can copy and paste into ChatGPT.
+An AI agent skill with two modes:
 
-These prompts are optimized for **ChatGPT (free/paid), DALL-E 3, and GPT Image 1.5** — the most accessible AI image tools. High-quality prompts are the key to great results, regardless of which model you use.
+**Search Mode** -- search a curated library of 14,000+ model-agnostic image generation prompts with sample images. Organized into 11 categories: social media posts, product marketing, profile portraits, posters, infographics, e-commerce, game assets, comics, YouTube thumbnails, app/web design, and more.
 
-### Why Use This Skill?
-
-✅ **5 logo templates** — premium, tech, traditional, creative, or budget
-✅ **Color palette generator** — hex codes with usage explanations
-✅ **Brand board prompts** — visual identity presentation slides
-✅ **Hero image prompts** — single or 3-image sets, ultra-photorealistic
-✅ **Business card + social media prompts** — complete brand packages
-✅ **Mockup prompts** — phone and merchandise for client pitches
-✅ **Full brand kit workflow** — runs through all assets in order
-✅ **ChatGPT reliability fixes** — transparent BG, text fixing, anti-plastic rules
-✅ **Multi-language** — responds in your language, outputs prompts in English
+**Branding Mode** -- generate custom prompts from templates for logos (5 styles), color palettes, brand boards, hero images, business cards, social media assets, mockups, and full brand identity kits.
 
 ---
 
 ## Installation
 
-### OpenClaw (Recommended)
+### OpenClaw
 ```bash
 openclaw skills install git:https://github.com/panoskiriakopoulos-sys/aipreneurs-ai-brand-kit
 ```
@@ -41,12 +30,7 @@ openclaw skills install git:https://github.com/panoskiriakopoulos-sys/aipreneurs
 npx skills i panoskiriakopoulos-sys/aipreneurs-ai-brand-kit
 ```
 
-### Claude Projects (Manual)
-1. Open [Claude.ai](https://claude.ai) → Projects → Project Settings
-2. Paste the contents of `SKILL.md` into Custom Instructions
-3. Start a new conversation in that project
-
-### Other AI Assistants (Cursor, Gemini CLI, etc.)
+### Other AI Assistants
 ```bash
 npx skills i panoskiriakopoulos-sys/aipreneurs-ai-brand-kit
 ```
@@ -55,52 +39,63 @@ npx skills i panoskiriakopoulos-sys/aipreneurs-ai-brand-kit
 
 ## How to Use
 
-### Mode 1: Single Asset
+### Search the Prompt Library
 
 Describe what you need:
 
 ```
-"I need a logo for a beach taverna in Crete called To Kyma"
-"Generate a color palette for a luxury spa brand"
-"Design a hero image for a tech startup"
+"I need a cyberpunk portrait avatar"
+"Find me social media post prompts for a restaurant"
+"Looking for product marketing visuals for a tech product"
+"Help me find a YouTube thumbnail for a podcast episode"
+```
+
+The AI searches 14,000+ prompts, returns the top 3 matches with sample images, and can remix any prompt for your specific needs.
+
+### Generate Brand Assets
+
+```
+"I need a logo for a beach taverna called To Kyma"
+"Color palette for a luxury villa brand"
+"Full brand kit for a web agency in Thessaloniki"
 "Business card for a freelance photographer"
 ```
 
-The AI will ask a couple of questions (vibe, colors, location), then output the exact ChatGPT prompt ready to copy and paste.
-
-### Mode 2: Full Brand Kit
-
-```
-"I need a full brand identity for a coffee shop"
-"Build a complete brand kit for my web agency"
-```
-
-The AI runs through the complete workflow: logo → colors → usage guide → business card → social kit → hero image, one asset at a time.
+The AI generates ready-to-use prompts you can paste into any image generation model.
 
 ---
 
-## Asset Types
+## Prompt Categories
 
-| Asset | What ChatGPT Produces |
-|-------|----------------------|
-| Logo (5 styles) | Transparent PNG, vector style |
-| Color Palette | Hex codes + usage guide |
-| Brand Board | Visual identity slide |
-| Hero Image(s) | Ultra-realistic 16:9 photos |
-| Business Card | Flat mockup design |
-| Social Kit | Profile pics, covers, banners |
-| Post Template | Clean social layout |
-| Highlight Covers | 6-icon Instagram set |
-| Mockup | Phone or merchandise mockup |
+| Category | Count |
+|----------|-------|
+| Social Media Post | 9,279 |
+| Product Marketing | 5,438 |
+| Profile / Avatar | 1,866 |
+| Poster / Flyer | 908 |
+| Infographic / Edu Visual | 586 |
+| E-commerce Main Image | 552 |
+| Game Asset | 673 |
+| Comic / Storyboard | 616 |
+| YouTube Thumbnail | 215 |
+| App / Web Design | 224 |
+| Uncategorized | 1,081 |
+
+Prompts are community-sourced and auto-updated from GitHub. No credentials needed.
 
 ---
 
-## Data Source
+## Updates
 
-All templates are battle-tested on real businesses — villas in Crete, restaurants in Athens, web agencies in Thessaloniki, and more. Built from hundreds of real-world generations that actually worked.
+Reference files auto-update on each use. To force a manual update:
+
+```bash
+cd <skill_dir>
+node scripts/setup.js --force
+```
 
 ---
 
 ## License
 
-MIT — free to use, modify, and share.
+MIT
