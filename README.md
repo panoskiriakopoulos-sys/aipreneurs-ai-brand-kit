@@ -5,6 +5,8 @@ Works with DALL-E, Midjourney, Flux, Stable Diffusion, GPT Image, Nano Banana, S
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Prompts: 14K+](https://img.shields.io/badge/Prompts-14%2C855-blue)](references/manifest.json)
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-brightgreen)](https://github.com/panoskiriakopoulos-sys/aipreneurs-ai-brand-kit/archive/refs/heads/main.zip)
+[![Install with Claude](https://img.shields.io/badge/Install-Claude%201-Click-purple)](https://claude.ai/new?q=Install%20the%20Aipreneurs%20AI%20Brand%20Kit%20skill.%0A%0AOpen%20your%20terminal%20and%20run%3A%0A%60%60%60%0Anpx%20skills%20i%20panoskiriakopoulos-sys%2Faipreneurs-ai-brand-kit%20-y%0A%60%60%60)
 
 ---
 
